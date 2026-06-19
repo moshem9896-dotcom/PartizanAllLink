@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partizan | Links</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #09090b;
+            --card-bg: #141417;
+            --accent-color: #cca152; /* זהב */
+            --hover-bg: #1c1c21;
+            --text-color: #ffffff;
+            --text-secondary: #a1a1aa;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* אנימציית כניסה מלמטה למעלה */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* אנימציית זוהר פועם לתמונת הפרופיל */
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(204, 161, 82, 0.5); }
+            70% { box-shadow: 0 0 0 15px rgba(204, 161, 82, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(204, 161, 82, 0); }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .profile-container {
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .profile-pic {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-color);
+            object-fit: cover;
+            animation: pulseGlow 2s infinite;
+        }
+
+        h1 {
+            font-size: 26px;
+            margin: 10px 0 5px 0;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            color: var(--accent-color);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 35px;
+            font-weight: 600;
+        }
+
+        .links-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        /* עיצוב בסיסי לכפתורים */
+        .btn {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            padding: 16px 20px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+
+        /* אנימציה מדורגת - כל כפתור מופיע קצת אחרי קודמו */
+        .btn:nth-child(1) { animation-delay: 0.1s; }
+        .btn:nth-child(2) { animation-delay: 0.2s; }
+        .btn:nth-child(3) { animation-delay: 0.3s; }
+        .btn:nth-child(4) { animation-delay: 0.4s; }
+        .btn:nth-child(5) { animation-delay: 0.5s; }
+        .btn:nth-child(6) { animation-delay: 0.6s; }
+
+        /* אפקט מעבר בריחוף/לחיצה */
+        .btn:hover, .btn:active {
+            background-color: var(--hover-bg);
+            border-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(204, 161, 82, 0.15);
+        }
+
+        .btn-content {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .btn i {
+            font-size: 20px;
+            width: 25px;
+            text-align: center;
+        }
+
+        /* צבעי אייקונים מקוריים */
+        .fa-discord { color: #5865F2; }
+        .fa-youtube { color: #FF0000; }
+        .fa-instagram { color: #E1306C; }
+        .fa-tiktok { color: #00f2fe; }
+        .kick-icon { color: #53FC18; font-weight: bold; font-style: normal; font-size: 18px; }
+
+        .arrow-icon {
+            font-size: 12px;
+            color: var(--text-secondary);
+            transition: transform 0.3s;
+        }
+
+        .btn:hover .arrow-icon, .btn:active .arrow-icon {
+            transform: translateX(-4px);
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="profile-container">
+            <img src="profile.jpg" alt="Partizan" class="profile-pic">
+        </div>
+
+        <h1>PARTIZAN</h1>
+        <div class="subtitle">קהילה רשמית</div>
+
+        <div class="links-wrapper">
+            <a href="https://discord.gg/U4Wt5fd8y" target="_blank" class="btn">
+                <div class="btn-content">
+                    <i class="fab fa-discord"></i>
+                    <span>שרת הדיסקורד של הערוץ</span>
+                </div>
+                <i class="fas fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <a href="https://discord.gg/prrp" target="_blank" class="btn">
+                <div class="btn-content">
+                    <i class="fab fa-discord"></i>
+                    <span>שרת הדיסקורד של השרת</span>
+                </div>
+                <i class="fas fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <a href="https://youtube.com/@partizanyt?si=tMghgjRiHxWrb5j9" target="_blank" class="btn">
+                <div class="btn-content">
+                    <i class="fab fa-youtube"></i>
+                    <span>ערוץ היוטיוב</span>
+                </div>
+                <i class="fas fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <a href="https://kick.com/partizanktv" target="_blank" class="btn">
+                <div class="btn-content">
+                    <span class="kick-icon">K</span>
+                    <span>ערוץ ה-Kick</span>
+                </div>
+                <i class="fas fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <a href="https://www.tiktok.com/@oryan_azulay?_r=1&_t=ZS-97LtX046qcq" target="_blank" class="btn">
+                <div class="btn-content">
+                    <i class="fab fa-tiktok"></i>
+                    <span>ערוץ הטיקטוק</span>
+                </div>
+                <i class="fas fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <a href="https://www.instagram.com/oryan_azulay/" target="_blank" class="btn">
+                <div class="btn-content">
+                    <i class="fab fa-instagram"></i>
+                    <span>אינסטגרם</span>
+                </div>
+                <i class="fas fa-chevron-left arrow-icon"></i>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
